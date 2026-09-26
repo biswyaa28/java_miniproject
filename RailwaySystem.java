@@ -81,31 +81,31 @@ public class RailwaySystem {
     }
 
     // ===== 7. Display passengers =====
-    public void showPassengers() {
-        System.out.println("--- Passengers ---");
-        for (Passenger p : passengers) {
-            p.displayPassenger();
-            System.out.println();
+        public void showPassengers() {                    // method to show all passengers
+            System.out.println("--- Passengers ---");     // print heading
+            for (Passenger p : passengers) {              // loop through each passenger in the list
+                p.displayPassenger();                     // print that passenger's details
+                System.out.println();                     // print blank line for spacing
+            }
+        }
+
+        // ===== 8. Display reservations =====
+        public void showReservations() {                  // method to show all reservations
+            System.out.println("--- Reservations ---");   // print heading
+            for (Reservation r : reservations) {          // loop through each reservation in the list
+                r.displayReservation();                   // print that reservation's details
+                System.out.println();                     // print blank line for spacing
+            }
+        }
+
+        // ===== Sample data for demo =====
+        public void loadSampleData() {                    // fills app with ready-made test data
+            // 3 sample trains
+            addTrain(new Train(1001, "Rajdhani Express", "Delhi", "Mumbai", 30));     // train 1
+            addTrain(new Train(1002, "Shatabdi Express", "Delhi", "Chandigarh", 20)); // train 2
+            addTrain(new Train(1003, "Duronto Express", "Mumbai", "Pune", 25));       // train 3
+            // 2 sample passengers
+            addPassenger(501, "Anil", 25);   // passenger 1
+            addPassenger(502, "Sita", 30);   // passenger 2
         }
     }
-
-    // ===== 8. Display reservations =====
-    public void showReservations() {
-        System.out.println("--- Reservations ---");
-        for (Reservation r : reservations) {
-            r.displayReservation();
-            System.out.println();
-        }
-    }
-
-    // ===== Sample data for demo =====
-    public void loadSampleData() {
-        // 3 sample trains
-        addTrain(new Train(1001, "Rajdhani Express", "Delhi", "Mumbai", 30));
-        addTrain(new Train(1002, "Shatabdi Express", "Delhi", "Chandigarh", 20));
-        addTrain(new Train(1003, "Duronto Express", "Mumbai", "Pune", 25));
-        // 2 sample passengers
-        addPassenger(501, "Anil", 25);
-        addPassenger(502, "Sita", 30);
-    }
-}
